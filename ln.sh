@@ -9,17 +9,17 @@ rm -v ${dirCron}/*/*
 
 for cron in ${min5Cron[@]}; do
   ln -s $dirScript/$cron $dirCron/5min/
-  echo "Включено ${cron} Каждые 5 минут"
+  echo "${cron} -> 5min"
 done
 
 for cron in ${daysCron[@]}; do
   ln -s $dirScript/$cron $dirCron/day/
-  echo "Включено ${cron} раз в день"
+  echo "${cron} -> day"
 done
 
 for cron in ${weekCron[@]}; do
   ln -s $dirScript/$cron $dirCron/week/
-  echo "Включено ${cron} раз в неделю"
+  echo "${cron} -> week"
 done
 
 tree $dirCron
