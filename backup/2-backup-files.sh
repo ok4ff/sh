@@ -14,8 +14,8 @@ for folder in ${folders[@]}; do
 
   printf " - rsync ${folderData[0]} ... \n"
   mkdir -p ${folderData[2]}
-  rsync -azhbv ${folderData[1]}  ${folderData[2]}
-  # rsync -azbh ${folderData[1]}  ${folderData[2]} 
+  # rsync -azhbv ${folderData[1]}  ${folderData[2]}
+  rsync -azbh ${folderData[1]}  ${folderData[2]} 
 
 done
 
