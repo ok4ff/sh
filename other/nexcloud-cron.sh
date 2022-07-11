@@ -4,8 +4,8 @@
 
 printf "\n"
 
-printf "Выполнение Nexcloud cron ... "
-/usr/bin/docker exec -i -u 33:33 $(/usr/bin/docker ps -q -f name=${nexcloudServiceName}) php -f cron.php
+printf "Выполнение nexcloud cron для сервиса ${nextcloudServiceName} ... "
+/usr/bin/docker exec -i -u 33:33 $(/usr/bin/docker ps -q -f name=${nextcloudServiceName}) php -f cron.php
 printf "Ок\n"
 
 printf "\n"
