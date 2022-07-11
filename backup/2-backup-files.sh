@@ -12,11 +12,12 @@ for folder in ${rsyncDockerFileFolders[@]}; do
   
   folderData=(${folder//;/ })
 
-  printf " - rsync ${folderData[0]} ... \n"
+  printf " - rsync ${folderData[0]} ... "
   mkdir -p ${folderData[2]}
   # rsync -azhbv ${folderData[1]}  ${folderData[2]}
   rsync -azbh ${folderData[1]}  ${folderData[2]} 
-
+  printf "OK\n"
+  
 done
 
 printf "\n"
