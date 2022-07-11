@@ -20,8 +20,8 @@ fi
 
 printf "\n"
 
-echo "Резервное копирование баз postgres $(date +"%H:%M:%S %d.%m.%Y")"
-echo "Директория: $dirBackupDB/$folderArg"
+echo "[$(date +"%H:%M:%S %d.%m.%Y")] Резервное копирование баз postgres"
+echo "[$(date +"%H:%M:%S %d.%m.%Y")] Директория: $dirBackupDB/$folderArg"
 
 
 for serv in ${postgresService[@]}; do
@@ -31,13 +31,13 @@ for serv in ${postgresService[@]}; do
   nameService=${servData[0]}
   nameUser=${servData[1]}
 
-  printf " - $nameService ... "
+  printf "[$(date +"%H:%M:%S %d.%m.%Y")]  - $nameService ... "
 
   mkdir -p $dirBackupDB/$folderArg/$nameService
   filename=dump_$(date +"%Y-%m-%d_%H_%M_%S").gz
   filepath=${dirBackupDB}/$folderArg/${nameService}/$filename
   /usr/bin/docker exec -i $(/usr/bin/docker ps -q -f name=${nameService}) pg_dumpall -c -U ${nameUser} | gzip > ${filepath}
-  printf "добавлен файл $filename $(date +"%H:%M:%S %d.%m.%Y")\n"
+  printf "добавлен файл $filename\n"
 
 done
 

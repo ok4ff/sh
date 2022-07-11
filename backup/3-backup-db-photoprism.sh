@@ -18,10 +18,10 @@ fi
 
 printf "\n"
 
-echo "Резервное копирование базы photoprism $(date +"%H:%M:%S %d.%m.%Y")"
-echo "Директория: $dirBackupDB/$folderArg"
+echo "[$(date +"%H:%M:%S %d.%m.%Y")] Резервное копирование базы photoprism $(date +"%H:%M:%S %d.%m.%Y")"
+echo "[$(date +"%H:%M:%S %d.%m.%Y")] Директория: $dirBackupDB/$folderArg"
 
-printf " - $photoprismServiceName ... "
+printf "[$(date +"%H:%M:%S %d.%m.%Y")]  - $photoprismServiceName ... "
 
 mkdir -p $dirBackupDB/$folderArg/$photoprismServiceName
 filename=dump_$(date +"%Y-%m-%d_%H_%M_%S").gz

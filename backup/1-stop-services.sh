@@ -4,13 +4,13 @@
 
 printf "\n"
 
-echo "Остановка сервисов $(date +"%H:%M:%S %d.%m.%Y")"
+echo "[$(date +"%H:%M:%S %d.%m.%Y")] Остановка сервисов"
 
 for serv in ${stoppedServices[@]}; do
   
-  printf " - остановка $serv ... "
+  printf "[$(date +"%H:%M:%S %d.%m.%Y")] - остановка $serv ... "
   docker service scale $serv=0 1> /dev/null
-  printf "OK $(date +"%H:%M:%S %d.%m.%Y") \n"
+  printf "OK\n"
 
 done
 
