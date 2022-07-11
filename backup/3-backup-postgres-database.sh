@@ -8,18 +8,20 @@
 # cat your_dump.sql | docker exec -i your-db-container psql -U postgres
 # gunzip < your_dump.sql.gz | docker exec -i your-db-container psql -U your-db-user -d your-db-name
 
-. .config*
+folderArg=$1
 
-if [[ $1 == "" ]]
+if [[ $folderArg == "" ]]
 then
    echo "Не указан параметр периодичности запуска!"
    exit 1
 fi
 
+. .config*
+
 printf "\n"
 
 echo "Резервное копирование баз postgres."
-echo "Директория: $dirBackupPostgre"
+echo "Директория: $dirBackupPostgre/$folderArg"
 
 
 for serv in ${postgreService[@]}; do
@@ -31,10 +33,10 @@ for serv in ${postgreService[@]}; do
 
   printf " - $nameService ... "
 
-  mkdir -p $dirBackupPostgre/$nameService
+  mkdir -p $dirBackupPostgre/$folderArg/$nameService
   filename=dump_$(date +"%Y-%m-%d_%H_%M_%S").gz
-  filepath=${dirBackupPostgre}/${nameService}/$filename
-  /usr/bin/docker exec -i $(/usr/bin/docker ps -q -f name=${nameService}) pg_dumpall -c -U ${nameUser} | gzip > ${filepath}
+  filepath=${dirBackupPostgre}/$folderArg/${nameService}/$filename
+  # /usr/bin/docker exec -i $(/usr/bin/docker ps -q -f name=${nameService}) pg_dumpall -c -U ${nameUser} | gzip > ${filepath}
   printf "добавлен файл $filename\n"
 
 done
