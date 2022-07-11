@@ -6,6 +6,4 @@ printf "\n"
 
 echo "Инициализация"
 
-git pull
-
 printf "\n"
