@@ -12,11 +12,10 @@ for folder in ${folders[@]}; do
   
   folderData=(${folder//;/ })
 
-  printf " - ${folderData[0]} ... "
+  printf " - rsync ${folderData[0]} ... \n"
   mkdir -p ${folderData[2]}
-  rsync -azhv ${folderData[1]}  ${folderData[2]} 
-  # rsync -azh ${folderData[1]}  ${folderData[2]} 
-  printf "OK\n"
+  echo "rsync -azhbv ${folderData[1]}  ${folderData[2]}"
+  # rsync -azbh ${folderData[1]}  ${folderData[2]} 
 
 done
 
