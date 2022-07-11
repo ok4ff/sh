@@ -14,7 +14,7 @@ then
    exit 1
 fi
 
-. docker.conf
+. backup.conf
 
 printf "\n"
 

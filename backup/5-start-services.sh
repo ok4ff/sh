@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. docker.conf
+. backup.conf
 
 printf "\n"
 

@@ -16,7 +16,7 @@ then
    exit 1
 fi
 
-. docker.conf
+. backup.conf
 
 printf "\n"
 
@@ -24,7 +24,7 @@ echo "Резервное копирование баз postgres."
 echo "Директория: $dirBackupDB/$folderArg"
 
 
-for serv in ${postgreService[@]}; do
+for serv in ${postgresService[@]}; do
   
   servData=(${serv//;/ })
   
