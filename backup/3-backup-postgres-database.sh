@@ -8,7 +8,7 @@
 # cat your_dump.sql | docker exec -i your-db-container psql -U postgres
 # gunzip < your_dump.sql.gz | docker exec -i your-db-container psql -U your-db-user -d your-db-name
 
-. .config
+. .config*
 
 if [[ $1 == "" ]]
 then

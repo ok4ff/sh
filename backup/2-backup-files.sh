@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. .config
+. .config*
 
 printf "\n"
 
