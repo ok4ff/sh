@@ -4,6 +4,6 @@
 
 printf "\n"
 
-echo "[$(date +"%H:%M:%S %d.%m.%Y")] Инициализация"
+echo "[$(date +"%d.%m.%Y %H:%M:%S")] Инициализация"
 
 printf "\n"

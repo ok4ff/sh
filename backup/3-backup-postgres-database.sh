@@ -20,8 +20,8 @@ fi
 
 printf "\n"
 
-echo "[$(date +"%H:%M:%S %d.%m.%Y")] Резервное копирование баз postgres"
-echo "[$(date +"%H:%M:%S %d.%m.%Y")] Директория: $dirBackupDB/$folderArg"
+echo "[$(date +"%d.%m.%Y %H:%M:%S")] Резервное копирование баз postgres"
+echo "[$(date +"%d.%m.%Y %H:%M:%S")] Директория: $dirBackupDB/$folderArg"
 
 
 for serv in ${postgresService[@]}; do
@@ -31,7 +31,7 @@ for serv in ${postgresService[@]}; do
   nameService=${servData[0]}
   nameUser=${servData[1]}
 
-  printf "[$(date +"%H:%M:%S %d.%m.%Y")]  - $nameService ... "
+  printf "[$(date +"%d.%m.%Y %H:%M:%S")]  - $nameService ... "
 
   mkdir -p $dirBackupDB/$folderArg/$nameService
   filename=dump_$(date +"%Y-%m-%d_%H_%M_%S").gz
