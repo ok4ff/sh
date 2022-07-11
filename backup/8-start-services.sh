@@ -4,7 +4,7 @@
 
 printf "\n"
 
-echo "Остановка сервисов"
+echo "Запуск сервисов"
 
 for serv in ${services[@]}; do
   
