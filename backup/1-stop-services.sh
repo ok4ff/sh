@@ -6,7 +6,7 @@ printf "\n"
 
 echo "Остановка сервисов"
 
-for serv in ${services[@]}; do
+for serv in ${stoppedServices[@]}; do
   
   printf " - остановка $serv ... "
   docker service scale $serv=0 1> /dev/null

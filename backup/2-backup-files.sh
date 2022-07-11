@@ -5,10 +5,10 @@
 printf "\n"
 
 echo "Синхранизация файлов контейнеров"
-echo "Директория источник: $dirSourceFile"
-echo "Директория получатель: $dirBackupFile"
+echo "Директория источник: $dirDockerFileSource"
+echo "Директория получатель: $dirDockerFileBackup"
 
-for folder in ${folders[@]}; do
+for folder in ${rsyncDockerFileFolders[@]}; do
   
   folderData=(${folder//;/ })
 
