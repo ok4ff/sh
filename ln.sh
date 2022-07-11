@@ -22,6 +22,8 @@ for cron in ${weekCron[@]}; do
   echo "Включено ${cron} раз в неделю"
 done
 
+tree $dirCron
+
 printf "\n"
 
 
