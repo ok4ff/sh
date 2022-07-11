@@ -5,8 +5,8 @@
 printf "\n"
 
 echo "Синхранизация файлов контейнеров"
-echo "Директория источник: $dirSource"
-echo "Директория получатель: $dirBackup"
+echo "Директория источник: $dirSourceFile"
+echo "Директория получатель: $dirBackupFile"
 
 for folder in ${folders[@]}; do
   
@@ -14,8 +14,8 @@ for folder in ${folders[@]}; do
 
   printf " - ${folderData[0]} ... "
   mkdir -p ${folderData[2]}
+  rsync -azhv ${folderData[1]}  ${folderData[2]} 
   # rsync -azh ${folderData[1]}  ${folderData[2]} 
-  # rsync -azbh ${folderData[1]}  ${folderData[2]} 
   printf "OK\n"
 
 done
