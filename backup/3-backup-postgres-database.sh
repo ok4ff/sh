@@ -16,7 +16,7 @@ then
    exit 1
 fi
 
-. .config*
+. docker.conf
 
 printf "\n"
 

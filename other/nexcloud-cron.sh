@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. .config*
+. docker.conf
 
 printf "\n"
 

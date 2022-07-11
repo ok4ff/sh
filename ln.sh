@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. .config*
+. crone.conf
 
 printf "\n"
 
