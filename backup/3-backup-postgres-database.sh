@@ -20,7 +20,7 @@ fi
 
 printf "\n"
 
-echo "Резервное копирование баз postgres."
+echo "Резервное копирование баз postgres $(date +"%H:%M:%S %d.%m.%Y")"
 echo "Директория: $dirBackupDB/$folderArg"
 
 
@@ -37,7 +37,7 @@ for serv in ${postgresService[@]}; do
   filename=dump_$(date +"%Y-%m-%d_%H_%M_%S").gz
   filepath=${dirBackupDB}/$folderArg/${nameService}/$filename
   /usr/bin/docker exec -i $(/usr/bin/docker ps -q -f name=${nameService}) pg_dumpall -c -U ${nameUser} | gzip > ${filepath}
-  printf "добавлен файл $filename\n"
+  printf "добавлен файл $filename $(date +"%H:%M:%S %d.%m.%Y")\n"
 
 done
 
