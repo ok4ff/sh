@@ -18,7 +18,7 @@ fi
 
 printf "\n"
 
-echo "[$(date +"%d.%m.%Y %H:%M:%S")] Резервное копирование базы photoprism)"
+echo "[$(date +"%d.%m.%Y %H:%M:%S")] Резервное копирование базы photoprism"
 echo "[$(date +"%d.%m.%Y %H:%M:%S")] Директория: $dirBackupDB/$folderArg"
 
 printf "[$(date +"%d.%m.%Y %H:%M:%S")]  - $photoprismServiceName ... "
